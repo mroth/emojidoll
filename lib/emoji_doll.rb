@@ -13,17 +13,11 @@ class EmojiDoll
 
   def initialize(seed = Random.new_seed)
     @seed = seed
-    @rng = Random.new(seed)
+    seedme()
   end
 
   def render
-    f = HEADS.sample(random: @rng)
-    h = HATS.sample(random: @rng)
-    b = BODIES.sample(random: @rng)
-    l = LEFT_ARMS.sample(random: @rng)
-    r = RIGHT_ARMS.sample(random: @rng)
-    s = SHOES.sample(random: @rng)
-    "    #{h} \n    #{f} \n#{l}#{b}#{r}\n  #{s}#{s}\n"
+    "    #{@h} \n    #{@f} \n#{@l}#{@b}#{@r}\n  #{@s}#{@s}\n"
   end
 
   def self.stats
@@ -36,6 +30,18 @@ class EmojiDoll
       right_arms: RIGHT_ARMS.size,
       combinations: HEADS.size * HATS.size * BODIES.size * SHOES.size * LEFT_ARMS.size * RIGHT_ARMS.size
     }
+  end
+
+  private
+
+  def seedme
+    @rng = Random.new(seed)
+    @f = HEADS.sample(random: @rng)
+    @h = HATS.sample(random: @rng)
+    @b = BODIES.sample(random: @rng)
+    @l = LEFT_ARMS.sample(random: @rng)
+    @r = RIGHT_ARMS.sample(random: @rng)
+    @s = SHOES.sample(random: @rng)
   end
 
 end
