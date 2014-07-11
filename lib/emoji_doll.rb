@@ -7,9 +7,9 @@ class EmojiDoll
   HATS = "🎩🎀👑👒🎓 ".split("")
   BODIES = "👕👚👗👙👘🎽".split("")
   SHOES = "👟👞👡👠👢".split("")
-  EITHER_ARMS = "📱🍷🍸👜💼".split("")
-  LEFT_ARMS = EITHER_ARMS + "🎈🎥📢📣🔫🚬🎤🎷🎺☕️🎣🍹🍭👌👋✊✌️👊✋👈💪☝️".split("")
-  RIGHT_ARMS = EITHER_ARMS + "☔️📞🎉🔪💉🎻🎸🌂👍👎👉".split("")
+  EITHER_ARMS = "📱🍷🍸👜💼🍦🍪🏀⚽️⚾️💰🎮".split("")
+  LEFT_ARMS = EITHER_ARMS + "🎈🎥📢📣🔫🚬🎤🎷🎺☕️🎣🍹🍭👌👋✊✌️👊✋👈💪☝️🍫🍝🍌🍢🍡🍳🔨🍼".split("")
+  RIGHT_ARMS = EITHER_ARMS + "☔️📞🎉🔪💉🎻🎸🌂👍👎👉🍕🍗🍖✏️✒️📓📒📔📯🎨🎬🏈🏉".split("")
 
   def initialize(seed = Random.new_seed)
     @seed = seed
