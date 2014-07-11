@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-
 require './lib/tweeter'
 require './lib/emoji_doll'
+
+$stdout.sync = true
 
 # use the stream client to watch userstream
 Tweeter::STREAM_CLIENT.user do |object|
