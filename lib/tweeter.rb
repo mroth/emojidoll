@@ -35,7 +35,7 @@ module Tweeter
   end
 
   def self.formatted_msg(screen_name, msg)
-    msg = "@#{screen_name} here's your unique #emojidoll:\n" +
+    msg = "@#{screen_name} your unique emojidoll:\n" +
           "#{msg}"
     msg
   end
