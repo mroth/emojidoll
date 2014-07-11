@@ -11,8 +11,13 @@ Tweeter::STREAM_CLIENT.user do |object|
     puts "*** saw a tweet at #{object.url.to_s}"
     if Tweeter.candidate?(object)
       puts "  - it's a candidate! omg i'm going to reply!!!"
-      r=Tweeter.reply_with_msg!( object, EmojiDoll.new(object.user.id).render() )
-      puts "  -> #{r.url.to_s}"
+      begin
+        r=Tweeter.reply_with_msg!( object, EmojiDoll.new(object.user.id).render() )
+        puts "  -> #{r.url.to_s}"
+      rescue Exception => e
+        puts "GOT ERROR TRYING TO POST"
+        puts e.message
+      end
     else
       puts "  - not a candidate, ignoring."
     end
