@@ -14,7 +14,7 @@ required_keys.each do |key|
 end
 
 # use the stream client to watch userstream
-Tweeter::STREAM_CLIENT.user do |object|
+Tweeter::STREAM_CLIENT.filter(track: "@emojidoll") do |object|
   case object
   when Twitter::Tweet
     puts "*** saw a tweet at #{object.url.to_s}"
