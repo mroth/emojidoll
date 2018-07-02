@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'twitter'
-require 'dotenv'
-Dotenv.load
 
 module Tweeter
 

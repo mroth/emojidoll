@@ -4,6 +4,15 @@ require './lib/emoji_doll'
 
 $stdout.sync = true
 
+required_keys = ['CONSUMER_KEY', 'CONSUMER_SECRET', 'ACCESS_TOKEN', 'ACCESS_SECRET']
+required_keys.each do |key|
+  if ENV[key].nil?
+    puts "Required environment variable #{key} not set, aborting."
+    puts "Was looking for: #{required_keys}."
+    exit 1
+  end
+end
+
 # use the stream client to watch userstream
 Tweeter::STREAM_CLIENT.user do |object|
   case object
