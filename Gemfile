@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '~> 2.5.1'
 
-gem 'twitter', '~> 5.11.0'
-gem 'dotenv', '~> 0.11.1'
+gem 'twitter', '~> 6.2.0'
 
 group :development do
-  gem 'rspec', '~> 3.0.0'
+  gem 'rspec', '~> 3.7.0'
 end
